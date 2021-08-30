@@ -10,21 +10,7 @@ namespace ProjetoTesteMVC5.Controllers
     public class AlunoController : Controller
     {
         [Route("novo-aluno")]
-        public ActionResult Novo(Aluno aluno)
-        {
-            aluno = new Aluno { 
-                Id = 1,
-                Nome = "Karol",
-                CPF = "1234567863",
-                DataMatricula=DateTime.Now,
-                Email = "karol@mail.com",
-                Ativo = true
-            };
-
-            return RedirectToAction("Index", aluno);
-        }
-
-        public ActionResult Index(Aluno aluno)
+        public ActionResult NovoAluno(Aluno aluno)
         {
             if (!ModelState.IsValid)
             {
@@ -34,5 +20,6 @@ namespace ProjetoTesteMVC5.Controllers
             return View(aluno);
 
         }
+           
     }
 }
